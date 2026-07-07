@@ -32,6 +32,119 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* Product Gallery Styles - Fixed image cropping */
+    .gallery-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+
+    .product-gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .product-gallery-item .image-wrapper {
+      width: 100%;
+      overflow: hidden;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border-bottom: 3px solid #f4a900;
+      flex-shrink: 0;
+    }
+
+    .product-gallery-item .image-wrapper img {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .product-gallery-item:hover .image-wrapper img {
+      transform: scale(1.03);
+    }
+
+    .product-gallery-item .product-info {
+      padding: 18px 20px 20px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-gallery-item .product-info h5 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #2c3e50;
+    }
+
+    .product-gallery-item .product-info .product-sub {
+      font-size: 0.85rem;
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+
+    .product-gallery-item .product-info .product-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 16px;
+      border-radius: 30px;
+      color: #fff;
+      margin: 4px auto 0;
+      width: fit-content;
+    }
+
+    .product-gallery-item .product-info .product-tag.paver {
+      background: #2c7a4d;
+    }
+
+    .product-gallery-item .product-info .product-tag.block {
+      background: #b5651d;
+    }
+
+    .product-gallery-item .product-info .product-tag.kerb {
+      background: #6c5b7b;
+    }
+
+    .section-title .badge-featured {
+      background: #f4a900;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 6px 20px;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+      .product-gallery-item .image-wrapper img {
+        max-height: 200px;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
@@ -49,7 +162,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Products</a></li>
           <li><a href="projects.html">Factory</a></li>
-          <!-- <li><a href="blog.html">Downloads</a></li> -->
           <li><a href="contact.html">Contact</a></li>
           <li><a href="#get-started" class="btn-get-quote">Get Quote</a></li>
         </ul>
@@ -123,6 +235,130 @@
       </div>
 
     </section><!-- /Hero Section -->
+
+    <!-- ============================================================ -->
+    <!-- PRODUCT GALLERY SECTION - FIXED IMAGE CROPPING -->
+    <!-- ============================================================ -->
+    <section id="product-gallery" class="gallery-section">
+      <div class="container">
+
+        <div class="section-title text-center" data-aos="fade-up">
+          <span class="badge-featured">✦ Featured Products</span>
+          <h2 class="mt-2">Premium Pavers & Blocks</h2>
+          <p>Explore our range of high-quality pavers and blocks — engineered for strength, designed for beauty.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- Image 1: brick-paver-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/brick-paver-g.jpeg" alt="Brick Paver">
+              </div>
+              <div class="product-info">
+                <h5>Brick Paver</h5>
+                <span class="product-sub">200 × 100 × 60 mm</span>
+                <span class="product-tag paver">Paver</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 2: I-paver-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/I-paver-g.jpeg" alt="I Paver">
+              </div>
+              <div class="product-info">
+                <h5>I-Paver</h5>
+                <span class="product-sub">200 × 165 × 80/60 mm</span>
+                <span class="product-tag paver">Paver</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 3: solid-bloch-g1.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/solid-bloch-g1.jpeg" alt="Solid Block">
+              </div>
+              <div class="product-info">
+                <h5>Solid Block</h5>
+                <span class="product-sub">6" · 400 × 150 × 200 mm</span>
+                <span class="product-tag block">Block</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 4: solid-block-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/solid-block-g.jpeg" alt="Solid Block">
+              </div>
+              <div class="product-info">
+                <h5>Solid Block</h5>
+                <span class="product-sub">8" · 400 × 200 × 200 mm</span>
+                <span class="product-tag block">Block</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 5: square-paver-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/square-paver-g.jpeg" alt="Square Paver">
+              </div>
+              <div class="product-info">
+                <h5>Square Paver</h5>
+                <span class="product-sub">200 × 200 × 60 mm</span>
+                <span class="product-tag paver">Paver</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 6: zig-zag-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/zig-zag-g.jpeg" alt="Zig Zag Paver">
+              </div>
+              <div class="product-info">
+                <h5>Zig Zag Paver</h5>
+                <span class="product-sub">225 × 165 × 80 mm</span>
+                <span class="product-tag paver">Paver</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 7: zig-zag-paver-60-g.jpeg -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="product-gallery-item">
+              <div class="image-wrapper">
+                <img src="assets/img/gallery/zig-zag-paver-60-g.jpeg" alt="Zig Zag Paver 60mm">
+              </div>
+              <div class="product-info">
+                <h5>Zig Zag Paver 60</h5>
+                <span class="product-sub">225 × 165 × 60 mm</span>
+                <span class="product-tag paver">Paver</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="services.html" class="btn btn-warning btn-lg px-5" style="color:#fff; font-weight:600; border-radius:30px;">
+            View Complete Range <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- ============================================================ -->
 
     <!-- Get Started Section - Quote Form -->
     <section id="get-started" class="get-started section">
@@ -211,11 +447,10 @@
     <!-- Constructions Section - Why SGD Features -->
     <section id="constructions" class="constructions section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Built Strong. Built for Tomorrow.</h2>
         <p>Sustainable by Nature, Strong by Design — engineered to outperform for modern infrastructure.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
 
@@ -236,7 +471,7 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card Item -->
+          </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card-item">
@@ -253,7 +488,7 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card Item -->
+          </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card-item">
@@ -270,7 +505,7 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card Item -->
+          </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="card-item">
@@ -287,22 +522,21 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card Item -->
+          </div>
 
         </div>
 
       </div>
 
-    </section><!-- /Constructions Section -->
+    </section>
 
     <!-- Services Section - Product Range -->
     <section id="services" class="services section light-background">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Product Range</h2>
         <p>Premium Quality · Durable · Reliable — every product precision-built for excellence.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
 
@@ -310,61 +544,49 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item service-block position-relative">
-              <!-- <h3>Solid Blocks</h3> -->
-              <!-- <p>4" Solid Block (400 × 100 × 200 mm) • 6" Solid Block (400 × 150 × 200 mm) • 8" Solid Block (400 × 200 × 200 mm)</p> -->
               <a href="services.html" class="readmore stretched-link">View Products <i
                   class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item service-paver position-relative">
-              <!-- <h3>Pavers</h3>
-              <p>Zig Zag Paver (80mm & 60mm) • I Paver (80mm & 60mm) • Brick Paver (200 × 100 × 60 mm) • Square Paver (200 × 200 × 60 mm)</p> -->
               <a href="services.html" class="readmore stretched-link">View Products <i
                   class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item service-eco position-relative">
-              <!-- <h3>Eco Pavers</h3> -->
-              <!-- <p>Grass Paver (600 × 400 × 80 mm) — Permeable paving solution for green spaces and driveways. Sustainable by nature.</p> -->
               <a href="services.html" class="readmore stretched-link">View Products <i
                   class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item service-kerb position-relative">
-              <!-- <h3>Kerb Stones</h3> -->
-              <!-- <p>Kerb Stone (600 × 400 × 200 / 100 mm) — Durable edge restraints for roads, gardens and landscaping. Built to last.</p> -->
               <a href="services.html" class="readmore stretched-link">View Products <i
                   class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item service-color position-relative">
-              <!-- <h3>6 Color Variants</h3> -->
-              <!-- <p>Natural Grey • Charcoal • Terracotta Red • Burnt Sienna • Saffron • Forest Green — Match every landscape.</p> -->
               <a href="services.html" class="readmore stretched-link">View Colors <i class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item service-download position-relative">
-              <!-- <h3>Downloads</h3> -->
-              <!-- <p>Brochures, catalogues & technical resources. CAD/DWG files available on request for confirmed projects.</p> -->
               <a href="blog.html" class="readmore stretched-link">Download Now <i class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
         </div>
 
       </div>
 
-    </section><!-- /Services Section -->
+    </section>
 
     <!-- Alt Services Section - Company Mission -->
     <section id="alt-services" class="alt-services section">
@@ -386,7 +608,7 @@
                 <h4>Our Vision</h4>
                 <p>Building a stronger & greener tomorrow — be Karnataka's most trusted premium block & paver brand.</p>
               </div>
-            </div><!-- End Icon Box -->
+            </div>
 
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-bullseye flex-shrink-0"></i>
@@ -394,7 +616,7 @@
                 <h4>Our Mission</h4>
                 <p>Deliver precision-engineered, sustainable products at scale with uncompromised quality.</p>
               </div>
-            </div><!-- End Icon Box -->
+            </div>
 
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-building flex-shrink-0"></i>
@@ -403,14 +625,14 @@
                 <p>Purpose-built automated facility in Kumar Beedu, Bogadi, Mysuru — fully automatic block machine,
                   hydraulic pan mixer, stacker and palletizing system. State-of-the-art German technology.</p>
               </div>
-            </div><!-- End Icon Box -->
+            </div>
 
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Alt Services Section -->
+    </section>
 
     <!-- Features Section - Equipment & Sustainability -->
     <section id="features" class="features section">
@@ -550,7 +772,7 @@
 
       </div>
 
-    </section><!-- /Features Section -->
+    </section>
 
     <!-- Projects Section - Factory & Products Showcase -->
     <section id="projects" class="projects section">
@@ -701,143 +923,7 @@
 
       </div>
 
-    </section><!-- /Projects Section -->
-
-    <!-- Testimonials Section -->
-    <!-- <section id="testimonials" class="testimonials section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>What Our Customers Say</h2>
-        <p>Trusted by architects, contractors and homeowners across Karnataka.</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Rajesh Kumar</h3>
-                  <h4>Contractor, Mysuru</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>The precision and consistency of SGD blocks are unmatched. Delivery is always on time and the quality is uniform across every batch. Highly recommended!</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Priya Sharma</h3>
-                  <h4>Architect, Bengaluru</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>The color variants and finish of SGD pavers are excellent. My clients love the Terracotta Red and Charcoal options for their driveways.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Manjunath Gowda</h3>
-                  <h4>Homeowner, Mandya</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Used SGD grass pavers for my garden pathway. Excellent quality and the team was very helpful with installation guidance.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Vikram Shetty</h3>
-                  <h4>Builder, Mangaluru</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>SGD's commitment to sustainability and quality is impressive. Their low water absorption blocks have been perfect for our coastal projects.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>Anand Murthy</h3>
-                  <h4>Infrastructure Developer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Reliable supply chain and consistent product quality. SGD has become our go-to supplier for all block and paver requirements.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section> -->
+    </section>
 
     <!-- Recent Blog Posts Section - Downloads Area -->
     <section id="recent-blog-posts" class="recent-blog-posts section">
