@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Home Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/</loc>
     <priority>1.0</priority>
   </url>
 
+  <!-- About Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/about.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <!-- Products Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/services.html</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
+  <!-- Solid Blocks Product Page -->
+  <url>
+    <loc>https://sgduniqueblocksandpavers.in/product/solid-blocks-detail.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Interlocking Pavers Product Page -->
+  <url>
+    <loc>https://sgduniqueblocksandpavers.in/product/pavers-detail.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Grass Pavers Product Page -->
+  <url>
+    <loc>https://sgduniqueblocksandpavers.in/product/grass-paver-detail.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kerb Stones Product Page -->
+  <url>
+    <loc>https://sgduniqueblocksandpavers.in/product/kerb-stones-detail.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/projects.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/blog.html</loc>
     <priority>0.7</priority>
   </url>
 
+  <!-- Contact Page -->
   <url>
     <loc>https://sgduniqueblocksandpavers.in/contact.html</loc>
     <priority>0.8</priority>
