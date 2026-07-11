@@ -6,6 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- =======================================================
+  CACHE-BUSTING VERSION - JAVASCRIPT APPROACH
+  ======================================================== -->
+  <script>
+    // Update this version number on every deployment
+    const VERSION = "1.0.2"; // ← CHANGE THIS NUMBER WHEN YOU PUSH TO GITHUB
+    
+    // Function to add version to URLs
+    function v(url) {
+      const separator = url.includes('?') ? '&' : '?';
+      return url + separator + 'v=' + VERSION;
+    }
+    
+    // Apply version to all resources dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      // Version all link[rel="stylesheet"], link[rel="icon"], link[rel="apple-touch-icon"]
+      document.querySelectorAll('link[rel="stylesheet"], link[rel="icon"], link[rel="apple-touch-icon"]').forEach(el => {
+        if (el.href && !el.href.includes('v=')) {
+          el.href = v(el.href);
+        }
+      });
+      
+      // Version all images with data-version attribute
+      document.querySelectorAll('img[data-version]').forEach(el => {
+        el.src = v(el.src);
+      });
+      
+      // Version all script tags
+      document.querySelectorAll('script[src]').forEach(el => {
+        if (el.src && !el.src.includes('v=')) {
+          el.src = v(el.src);
+        }
+      });
+    });
+  </script>
+
+  <!-- =======================================================
   PRIMARY SEO - OPTIMIZED FOR MAXIMUM RANKINGS (UPDATED)
   ======================================================== -->
 
@@ -93,6 +129,9 @@
   ======================================================== -->
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Cache Buster - Load First -->
+<script src="assets/js/cache-buster.js"></script>
 
   <!-- =======================================================
   LUXURY INDUSTRIAL DESIGN SYSTEM - CUSTOM STYLES
@@ -1577,7 +1616,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo-1.png" style="max-height: 150px;"
+        <img src="assets/img/logo-1.png" data-version="true" style="max-height: 150px;"
           alt="SGD Unique Blocks & Pavers - Best Paver Blocks and Concrete Solid Blocks in Mysore">
       </a>
 
@@ -1643,25 +1682,25 @@
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-item">
-          <img src="assets/img/SDG-home.jpeg"
+          <img src="assets/img/SDG-home.jpeg" data-version="true"
             alt="SGD Unique Blocks & Pavers factory in Mysuru - Concrete Blocks Manufacturer">
         </div>
 
         <div class="carousel-item active">
-          <img src="assets/img/hero-banner1.jpeg"
+          <img src="assets/img/hero-banner1.jpeg" data-version="true"
             alt="Concrete solid blocks and interlocking paver blocks manufacturing at SGD Mysore">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/SDG-home.jpeg" alt="Premium paver blocks manufactured in Mysore by SGD Unique Blocks">
+          <img src="assets/img/SDG-home.jpeg" data-version="true" alt="Premium paver blocks manufactured in Mysore by SGD Unique Blocks">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/hero-banner1.jpeg" alt="SGD manufacturing facility in Kumar Beedu, Bogadi, Mysuru">
+          <img src="assets/img/hero-banner1.jpeg" data-version="true" alt="SGD manufacturing facility in Kumar Beedu, Bogadi, Mysuru">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/SDG-home.jpeg" alt="Quality concrete solid blocks from SGD Unique Blocks in Mysore">
+          <img src="assets/img/SDG-home.jpeg" data-version="true" alt="Quality concrete solid blocks from SGD Unique Blocks in Mysore">
         </div>
 
         <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
@@ -1795,7 +1834,7 @@
             <a href="product/solid-blocks-detail.html?size=4inch" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/solid-blocks-4-inch.jpeg"
+                  <img src="assets/img/solid-blocks-4-inch.jpeg" data-version="true"
                     alt="4 inch concrete solid block for construction in Mysore by SGD Unique Blocks">
                 </div>
                 <div class="product-info">
@@ -1811,7 +1850,7 @@
             <a href="product/solid-blocks-detail.html?size=6inch" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/solid-block-6-inch.jpeg"
+                  <img src="assets/img/solid-block-6-inch.jpeg" data-version="true"
                     alt="6 inch concrete solid block manufactured in Mysuru by SGD Unique Blocks">
                 </div>
                 <div class="product-info">
@@ -1827,7 +1866,7 @@
             <a href="product/solid-blocks-detail.html?size=8inch" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/solid-blocks-8-inch.jpeg"
+                  <img src="assets/img/solid-blocks-8-inch.jpeg" data-version="true"
                     alt="8 inch solid concrete block from SGD Unique Blocks in Mysore">
                 </div>
                 <div class="product-info">
@@ -1846,7 +1885,7 @@
             <a href="product/pavers-detail.html?design=i-paver&size=60mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/i-paver-60mm.jpeg"
+                  <img src="assets/img/i-paver-60mm.jpeg" data-version="true"
                     alt="I-Paver interlocking concrete paver blocks for driveways in Mysore">
                 </div>
                 <div class="product-info">
@@ -1862,7 +1901,7 @@
             <a href="product/pavers-detail.html?design=i-paver&size=80mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/i-paver-80-mm.jpeg"
+                  <img src="assets/img/i-paver-80-mm.jpeg" data-version="true"
                     alt="I-Paver interlocking paver blocks for walkways in Mysuru">
                 </div>
                 <div class="product-info">
@@ -1878,7 +1917,7 @@
             <a href="product/pavers-detail.html?design=zigzag&size=60mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/zig-zag-60mm.jpeg" alt="Zig Zag paver blocks for driveways in Mysore">
+                  <img src="assets/img/zig-zag-60mm.jpeg" data-version="true" alt="Zig Zag paver blocks for driveways in Mysore">
                 </div>
                 <div class="product-info">
                   <h5>Zig Zag Paver</h5>
@@ -1893,7 +1932,7 @@
             <a href="product/pavers-detail.html?design=zigzag&size=80mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/zig-zag-80mm.jpeg" alt="Zig Zag interlocking paver blocks from SGD Mysuru">
+                  <img src="assets/img/zig-zag-80mm.jpeg" data-version="true" alt="Zig Zag interlocking paver blocks from SGD Mysuru">
                 </div>
                 <div class="product-info">
                   <h5>Zig Zag Paver</h5>
@@ -1908,7 +1947,7 @@
             <a href="product/pavers-detail.html?design=brick&size=60mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/gallery/brick-paver-g.jpeg"
+                  <img src="assets/img/gallery/brick-paver-g.jpeg" data-version="true"
                     alt="Brick interlocking paver blocks for walkways in Mysore">
                 </div>
                 <div class="product-info">
@@ -1924,7 +1963,7 @@
             <a href="product/pavers-detail.html?design=square&size=60mm" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/gallery/square-paver-g.jpeg" alt="Square concrete paver blocks from SGD Mysore">
+                  <img src="assets/img/gallery/square-paver-g.jpeg" data-version="true" alt="Square concrete paver blocks from SGD Mysore">
                 </div>
                 <div class="product-info">
                   <h5>Square Paver</h5>
@@ -1942,7 +1981,7 @@
             <a href="product/kerb-stones-detail.html" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/kerb-stone-75mm.jpeg" alt="Kerb stones for roads and landscaping in Mysore">
+                  <img src="assets/img/kerb-stone-75mm.jpeg" data-version="true" alt="Kerb stones for roads and landscaping in Mysore">
                 </div>
                 <div class="product-info">
                   <h5>Kerb Stone</h5>
@@ -1957,7 +1996,7 @@
             <a href="product/grass-paver-detail.html" class="product-gallery-link">
               <div class="product-gallery-item">
                 <div class="image-wrapper">
-                  <img src="assets/img/projects/f9.jpg" alt="Grass paver eco blocks for parking in Mysore">
+                  <img src="assets/img/projects/f9.jpg" data-version="true" alt="Grass paver eco blocks for parking in Mysore">
                 </div>
                 <div class="product-info">
                   <h5>Grass Paver</h5>
@@ -2226,7 +2265,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/b11.png"
+                  <div class="card-bg"><img src="assets/img/b11.png" data-version="true"
                       alt="Fully automatic concrete block machine with German technology at SGD factory in Mysuru">
                   </div>
                 </div>
@@ -2245,7 +2284,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/b12.png"
+                  <div class="card-bg"><img src="assets/img/b12.png" data-version="true"
                       alt="Quality control and precision production at SGD block factory in Mysore"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
@@ -2264,7 +2303,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/b13.png"
+                  <div class="card-bg"><img src="assets/img/b13.png" data-version="true"
                       alt="Sustainable manufacturing practices at SGD Unique Blocks in Mysuru"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
@@ -2282,7 +2321,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg"><img src="assets/img/b14.png"
+                  <div class="card-bg"><img src="assets/img/b14.png" data-version="true"
                       alt="Customer focused service and reliable supply from SGD Mysuru"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
@@ -2360,7 +2399,7 @@
       <div class="container">
 
         <div class="row justify-content-around gy-4">
-          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/b15.png"
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/b15.png" data-version="true"
               alt="SGD Unique Blocks and Pavers factory in Kumar Beedu, Bogadi, Mysuru - Concrete Blocks Manufacturer"
               style="border-radius: var(--radius-card);">
           </div>
@@ -2473,7 +2512,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/b16.png" alt="SGD factory equipment and machinery for concrete blocks in Mysuru"
+                <img src="assets/img/b16.png" data-version="true" alt="SGD factory equipment and machinery for concrete blocks in Mysuru"
                   class="img-fluid" style="border-radius: var(--radius-card);">
               </div>
             </div>
@@ -2497,7 +2536,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-2.png"
+                <img src="assets/img/features-2.png" data-version="true"
                   alt="Sustainable manufacturing practices at SGD concrete block factory in Karnataka" class="img-fluid"
                   style="border-radius: var(--radius-card);">
               </div>
@@ -2523,7 +2562,7 @@
                   — premium quality you can trust.</p>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-3.png"
+                <img src="assets/img/features-3.png" data-version="true"
                   alt="Quality control and testing at SGD concrete block factory in Mysore" class="img-fluid"
                   style="border-radius: var(--radius-card);">
               </div>
@@ -2550,7 +2589,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-4.png"
+                <img src="assets/img/features-4.png" data-version="true"
                   alt="SGD company timeline and growth journey in Mysuru - Concrete Blocks Manufacturer"
                   class="img-fluid" style="border-radius: var(--radius-card);">
               </div>
@@ -2592,7 +2631,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f1.jpg" class="img-fluid"
+                <img src="assets/img/projects/f1.jpg" data-version="true" class="img-fluid"
                   alt="4 inch concrete solid block manufactured by SGD in Mysuru for construction">
                 <div class="portfolio-info">
                   <h4>4" Solid Block</h4>
@@ -2603,7 +2642,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f2.jpg" class="img-fluid"
+                <img src="assets/img/projects/f2.jpg" data-version="true" class="img-fluid"
                   alt="6 inch concrete solid block from SGD Unique Blocks in Mysore">
                 <div class="portfolio-info">
                   <h4>6" Solid Block</h4>
@@ -2614,7 +2653,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f3.png" class="img-fluid"
+                <img src="assets/img/projects/f3.png" data-version="true" class="img-fluid"
                   alt="8 inch solid concrete block by SGD in Mysore for construction projects">
                 <div class="portfolio-info">
                   <h4>8" Solid Block</h4>
@@ -2625,7 +2664,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pavers">
               <div class="portfolio-content h-100">
-                <img src="assets/img/use-cases/zig-zag-use-3.jpeg" class="img-fluid"
+                <img src="assets/img/use-cases/zig-zag-use-3.jpeg" data-version="true" class="img-fluid"
                   alt="Zig Zag interlocking paver blocks from SGD Mysuru for driveways">
                 <div class="portfolio-info">
                   <h4>Zig Zag Paver</h4>
@@ -2636,7 +2675,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pavers">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f5.jpg" class="img-fluid"
+                <img src="assets/img/projects/f5.jpg" data-version="true" class="img-fluid"
                   alt="I Paver concrete blocks manufactured by SGD in Karnataka for walkways">
                 <div class="portfolio-info">
                   <h4>I Paver</h4>
@@ -2647,7 +2686,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pavers">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f6.jpg" class="img-fluid"
+                <img src="assets/img/projects/f6.jpg" data-version="true" class="img-fluid"
                   alt="Brick paver blocks from SGD Unique Blocks in Mysuru for landscaping">
                 <div class="portfolio-info">
                   <h4>Brick Paver</h4>
@@ -2658,7 +2697,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kerbs">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f7.jpg" class="img-fluid"
+                <img src="assets/img/projects/f7.jpg" data-version="true" class="img-fluid"
                   alt="Kerb stones manufactured by SGD in Mysuru for roads">
                 <div class="portfolio-info">
                   <h4>Kerb Stone</h4>
@@ -2669,7 +2708,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pavers">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f8.jpg" class="img-fluid"
+                <img src="assets/img/projects/f8.jpg" data-version="true" class="img-fluid"
                   alt="Square paver blocks from SGD in Mysore for patios">
                 <div class="portfolio-info">
                   <h4>Square Paver</h4>
@@ -2680,7 +2719,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kerbs">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f9.jpg" class="img-fluid"
+                <img src="assets/img/projects/f9.jpg" data-version="true" class="img-fluid"
                   alt="Grass paver eco blocks from SGD Unique Blocks Mysuru for parking">
                 <div class="portfolio-info">
                   <h4>Grass Paver (Eco)</h4>
@@ -2691,7 +2730,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-factory">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f10.jpeg" class="img-fluid"
+                <img src="assets/img/projects/f10.jpeg" data-version="true" class="img-fluid"
                   alt="SGD automated factory and production facility in Kumar Beedu, Bogadi, Mysuru for concrete blocks">
                 <div class="portfolio-info">
                   <h4>Automated Production</h4>
@@ -2702,7 +2741,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-factory">
               <div class="portfolio-content h-100">
-                <img src="assets/img/hero-banner1.jpeg" class="img-fluid"
+                <img src="assets/img/hero-banner1.jpeg" data-version="true" class="img-fluid"
                   alt="Palfinger crane at SGD factory for safe material handling of concrete blocks">
                 <div class="portfolio-info">
                   <h4>Palfinger Crane</h4>
@@ -2713,7 +2752,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-factory">
               <div class="portfolio-content h-100">
-                <img src="assets/img/projects/f12.jpg" class="img-fluid"
+                <img src="assets/img/projects/f12.jpg" data-version="true" class="img-fluid"
                   alt="Quality control and testing at SGD concrete block facility in Mysore">
                 <div class="portfolio-info">
                   <h4>Quality Control</h4>

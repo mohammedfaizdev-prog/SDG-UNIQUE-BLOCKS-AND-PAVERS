@@ -6,6 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- =======================================================
+  CACHE-BUSTING VERSION - JAVASCRIPT APPROACH
+  ======================================================== -->
+  <script>
+    // Update this version number on every deployment
+    const VERSION = "1.0.2"; // ← CHANGE THIS NUMBER WHEN YOU PUSH TO GITHUB
+    
+    // Function to add version to URLs
+    function v(url) {
+      const separator = url.includes('?') ? '&' : '?';
+      return url + separator + 'v=' + VERSION;
+    }
+    
+    // Apply version to all resources dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      // Version all link[rel="stylesheet"] and link[rel="icon"]
+      document.querySelectorAll('link[rel="stylesheet"], link[rel="icon"], link[rel="apple-touch-icon"]').forEach(el => {
+        if (el.href && !el.href.includes('v=')) {
+          el.href = v(el.href);
+        }
+      });
+      
+      // Version all images with data-version attribute
+      document.querySelectorAll('img[data-version]').forEach(el => {
+        el.src = v(el.src);
+      });
+      
+      // Version all script tags
+      document.querySelectorAll('script[src]').forEach(el => {
+        if (el.src && !el.src.includes('v=')) {
+          el.src = v(el.src);
+        }
+      });
+    });
+  </script>
+
+  <!-- =======================================================
   PRIMARY SEO - FULLY OPTIMIZED
   ======================================================== -->
 
@@ -94,6 +130,9 @@
   ======================================================== -->
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Cache Buster - Load First -->
+<script src="assets/js/cache-buster.js"></script>
 
   <!-- =======================================================
   LUXURY INDUSTRIAL DESIGN SYSTEM - CUSTOM STYLES
@@ -559,7 +598,7 @@
     inset: 0;
     background-image:
         linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)),
-        url("assets/img/page-title-bg.png"); /* Change the path */
+        url("assets/img/page-title-bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1081,7 +1120,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo-1.png" style="max-height: 150px;"
+        <img src="assets/img/logo-1.png" data-version="true" style="max-height: 150px;"
           alt="SGD Unique Blocks & Pavers - Best Concrete Blocks & Paver Blocks Manufacturer in Mysore">
       </a>
 
@@ -1129,7 +1168,7 @@
         <div class="row position-relative">
 
           <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/SDG-home.jpeg"
+            <img src="assets/img/SDG-home.jpeg" data-version="true"
               alt="SGD Unique Blocks and Pavers factory in Kumar Beedu, Bogadi, Mysuru - Premium Concrete Blocks & Paver Blocks Manufacturer">
           </div>
 
@@ -1322,7 +1361,7 @@
 
         <div class="row justify-content-around gy-4">
           <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/SDG-home.jpeg"
+            <img src="assets/img/SDG-home.jpeg" data-version="true"
               alt="SGD Unique Blocks and Pavers vision and mission - Premium Concrete Blocks & Paver Blocks Manufacturer in Mysore"
               style="border-radius: var(--radius-card);">
           </div>
@@ -1460,7 +1499,7 @@
           </div>
 
           <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/sdg-about1.jpeg"
+            <img src="assets/img/sdg-about1.jpeg" data-version="true"
               alt="Sustainable manufacturing at SGD Unique Blocks and Pavers in Mysuru - German Technology Concrete Blocks & Paver Blocks"
               style="border-radius: var(--radius-card);">
           </div>
