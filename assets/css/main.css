@@ -83,7 +83,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--accent-color);
   font-family: var(--heading-font);
 }
 
@@ -245,7 +245,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: #4fdf2e;
+    background-color: #000000;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -464,11 +464,23 @@ h6 {
   position: relative;
 }
 
-.footer:before {
+.footer::before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
   position: absolute;
   inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(11, 11, 11, 0.96),
+      rgba(11, 11, 11, 0.96)
+    ),
+    url("../img/footer-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
 }
 
 .footer .footer-top {
@@ -673,7 +685,12 @@ h6 {
 
 .page-title:before {
   content: "";
-  background-color: color-mix(in srgb, var(--background-color), transparent 40%);
+  background-image:
+        url("assets/img/page-title-bg.png"); /* Change the path */
+         background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   position: absolute;
   inset: 0;
 }
@@ -711,7 +728,7 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--default-color);
+  color: #ffffff;
   background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 92px;
@@ -1274,7 +1291,7 @@ section,
 }
 
 .features .tab-pane h3 {
-  color: var(--heading-color);
+  color: var(--accent-color);
   font-weight: 700;
   font-size: 32px;
   position: relative;
@@ -1649,13 +1666,13 @@ section,
 .about .our-story h4 {
   text-transform: uppercase;
   font-size: 1.1rem;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: white;
 }
 
 .about .our-story h3 {
   font-size: 2.25rem;
   font-weight: 700;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: white;
 }
 
 .about .our-story p:last-child {
@@ -2160,7 +2177,7 @@ section,
 }
 
 .blog-posts .post-date {
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
   color: var(--contrast-color);
   position: absolute;
   right: 0;
@@ -2697,7 +2714,7 @@ section,
 # Widgets
 --------------------------------------------------------------*/
 .widgets-container {
-  background-color: var(--surface-color);
+  background-color: #000000;
   padding: 30px;
   margin: 60px 0 30px 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
