@@ -71,17 +71,17 @@
   FAVICONS
   ======================================================== -->
 
-  <link href="assets/img/logo-1.png" rel="icon">
+  <link href="assets/img/logo1.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- =======================================================
-  LUXURY FONTS
+  FONT PERFORMANCE OPTIMIZATION
   ======================================================== -->
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- =======================================================
@@ -101,1043 +101,184 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Cache Buster - Load First -->
-<script src="assets/js/cache-buster.js"></script>
-
   <!-- =======================================================
-  LUXURY INDUSTRIAL DESIGN SYSTEM - CUSTOM STYLES
+  LOCAL BUSINESS SCHEMA - CRITICAL FOR LOCAL SEO
   ======================================================== -->
 
-  <style>
-    /* ============================================
-    ROOT VARIABLES – Design System
-    ============================================ */
-    :root {
-      --bg-primary: #0B0B0B;
-      --bg-secondary: #111111;
-      --bg-card: #151515;
-      --bg-dark: #0F0F0F;
-      --gold: #D4AF37;
-      --gold-dark: #C89B3C;
-      --gold-light: #E8C84A;
-      --white: #FFFFFF;
-      --text-grey: #B8B8B8;
-      --text-muted: #8A8A8A;
-      --border-color: #2C2C2C;
-      --border-light: rgba(255, 255, 255, 0.08);
-      --font-heading: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --radius-card: 12px;
-      --radius-button: 6px;
-      --transition: 0.3s ease;
-      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.15);
-    }
-
-    /* ============================================
-    BASE STYLES - LUXURY INDUSTRIAL
-    ============================================ */
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-primary);
-      color: var(--text-grey);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    .heading-serif {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .heading-serif-medium {
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.2;
-    }
-
-    .label-gold {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .text-body {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-grey);
-    }
-
-    .text-gold {
-      color: var(--gold);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-    }
-
-    .section-dark {
-      background: var(--bg-secondary);
-    }
-
-    .section-card-bg {
-      background: var(--bg-card);
-    }
-
-    /* ============================================
-    BUTTONS - LUXURY STYLE
-    ============================================ */
-    .btn-luxury {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: none;
-      border-radius: var(--radius-button);
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .btn-luxury-primary {
-      background: var(--gold);
-      color: #000000;
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
-    }
-
-    .btn-luxury-primary:hover {
-      background: var(--gold-light);
-      box-shadow: 0 6px 30px rgba(212, 175, 55, 0.35);
-      transform: translateY(-2px);
-      color: #000000;
-    }
-
-    .btn-luxury-secondary {
-      background: transparent;
-      color: var(--gold);
-      border: 1.5px solid var(--gold);
-    }
-
-    .btn-luxury-secondary:hover {
-      background: var(--gold);
-      color: #000000;
-      transform: translateY(-2px);
-    }
-
-    .btn-luxury-sm {
-      padding: 10px 24px;
-      font-size: 12px;
-    }
-
-    .btn-luxury-outline-warning {
-      background: transparent;
-      color: var(--gold);
-      border: 1.5px solid var(--gold);
-    }
-
-    .btn-luxury-outline-warning:hover {
-      background: var(--gold);
-      color: #000000;
-      transform: translateY(-2px);
-    }
-
-    /* ============================================
-    PAGE TITLE - LUXURY
-    ============================================ */
-    .page-title {
-      position: relative;
-      padding: 140px 0 80px;
-      background: var(--bg-dark);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .page-title::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)),
-        url("assets/img/page-title-bg.png");
-      /* Change the path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: 1;
-    }
-
-    .page-title .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .page-title h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .page-title .breadcrumbs {
-      font-size: 14px;
-      color: var(--text-grey);
-    }
-
-    .page-title .breadcrumbs ol {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      gap: 8px;
-    }
-
-    .page-title .breadcrumbs ol li+li::before {
-      content: '/';
-      margin-right: 8px;
-      color: var(--text-muted);
-    }
-
-    .page-title .breadcrumbs ol li a {
-      color: var(--gold);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .page-title .breadcrumbs ol li a:hover {
-      color: var(--gold-light);
-    }
-
-    .page-title .breadcrumbs ol li.current {
-      color: var(--text-grey);
-    }
-
-    /* ============================================
-    BLOG DETAILS - LUXURY
-    ============================================ */
-    .blog-details .article {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
-      padding: 32px;
-      margin-bottom: 32px;
-    }
-
-    .blog-details .post-img {
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-
-    .blog-details .post-img img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.5s ease;
-    }
-
-    .blog-details .post-img:hover img {
-      transform: scale(1.02);
-    }
-
-    .blog-details .title {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-size: clamp(28px, 3vw, 36px);
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .blog-details .meta-top {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding: 12px 0 20px;
-      border-bottom: 1px solid var(--border-light);
-      margin-bottom: 24px;
-    }
-
-    .blog-details .meta-top ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .blog-details .meta-top ul li {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .blog-details .meta-top ul li i {
-      color: var(--gold);
-    }
-
-    .blog-details .meta-top ul li a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .blog-details .meta-top ul li a:hover {
-      color: var(--gold);
-    }
-
-    .blog-details .content {
-      color: var(--text-grey);
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .blog-details .content h2,
-    .blog-details .content h3 {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-weight: 700;
-      margin-top: 32px;
-      margin-bottom: 16px;
-    }
-
-    .blog-details .content h2 {
-      font-size: 28px;
-    }
-
-    .blog-details .content h3 {
-      font-size: 22px;
-    }
-
-    .blog-details .content p {
-      margin-bottom: 16px;
-    }
-
-    .blog-details .content ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-    }
-
-    .blog-details .content ul li {
-      padding: 6px 0 6px 28px;
-      position: relative;
-      color: var(--text-grey);
-    }
-
-    .blog-details .content ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .blog-details .content blockquote {
-      background: var(--bg-secondary);
-      border-left: 4px solid var(--gold);
-      padding: 20px 24px;
-      margin: 24px 0;
-      border-radius: var(--radius-button);
-    }
-
-    .blog-details .content blockquote p {
-      color: var(--white);
-      font-style: italic;
-      font-size: 1.05rem;
-      margin-bottom: 0;
-    }
-
-    .blog-details .content img {
-      border-radius: var(--radius-card);
-      margin: 24px 0;
-      width: 100%;
-      height: auto;
-    }
-
-    .blog-details .content a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .blog-details .content a:hover {
-      color: var(--gold-light);
-      text-decoration: underline;
-    }
-
-    .blog-details .content .bg-light-custom {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
-      padding: 16px 20px;
-      margin: 24px 0;
-    }
-
-    .blog-details .content .bg-light-custom p {
-      margin-bottom: 4px;
-      color: var(--text-grey);
-    }
-
-    .blog-details .content .bg-light-custom strong {
-      color: var(--white);
-    }
-
-    .blog-details .meta-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-light);
-      margin-top: 32px;
-    }
-
-    .blog-details .meta-bottom i {
-      color: var(--gold);
-    }
-
-    .blog-details .meta-bottom ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .blog-details .meta-bottom ul li a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      padding: 4px 12px;
-      border: 1px solid var(--border-light);
-      border-radius: 999px;
-      transition: var(--transition);
-    }
-
-    .blog-details .meta-bottom ul li a:hover {
-      color: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .blog-details .meta-bottom .cats {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .blog-details .meta-bottom .tags {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* ============================================
-    BLOG AUTHOR - LUXURY
-    ============================================ */
-    .blog-author .author-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
-      padding: 32px;
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .blog-author .author-container img {
-      border: 2px solid var(--gold);
-      padding: 8px;
-      background: var(--bg-primary);
-    }
-
-    .blog-author .author-container h4 {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .blog-author .author-container .social-links {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .blog-author .author-container .social-links a {
-      color: var(--text-muted);
-      transition: var(--transition);
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .blog-author .author-container .social-links a:hover {
-      color: var(--gold);
-    }
-
-    .blog-author .author-container p {
-      color: var(--text-grey);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    /* ============================================
-    RELATED POSTS - LUXURY
-    ============================================ */
-    .related-posts h4 {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .related-posts .post-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      transition: var(--transition);
-      height: 100%;
-    }
-
-    .related-posts .post-item:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-card);
-    }
-
-    .related-posts .post-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .related-posts .post-item:hover img {
-      transform: scale(1.03);
-    }
-
-    .related-posts .post-item h4 {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 12px 16px 4px;
-      margin: 0;
-    }
-
-    .related-posts .post-item h4 a {
-      color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .related-posts .post-item h4 a:hover {
-      color: var(--gold);
-    }
-
-    .related-posts .post-item time {
-      display: block;
-      padding: 0 16px 16px;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
-
-    /* ============================================
-    SIDEBAR WIDGETS - LUXURY
-    ============================================ */
-    .sidebar .widgets-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .sidebar .widget-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
-      padding: 24px;
-    }
-
-    .sidebar .widget-title {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--gold);
-    }
-
-    .sidebar .search-widget form {
-      display: flex;
-      gap: 0;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-button);
-      overflow: hidden;
-    }
-
-    .sidebar .search-widget form input {
-      flex: 1;
-      padding: 10px 16px;
-      border: none;
-      background: var(--bg-primary);
-      color: var(--white);
-      font-family: var(--font-body);
-    }
-
-    .sidebar .search-widget form input::placeholder {
-      color: var(--text-muted);
-    }
-
-    .sidebar .search-widget form input:focus {
-      outline: none;
-    }
-
-    .sidebar .search-widget form button {
-      padding: 10px 16px;
-      border: none;
-      background: var(--gold);
-      color: #000000;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .sidebar .search-widget form button:hover {
-      background: var(--gold-light);
-    }
-
-    .sidebar .categories-widget ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar .categories-widget ul li {
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .sidebar .categories-widget ul li:last-child {
-      border-bottom: none;
-    }
-
-    .sidebar .categories-widget ul li a {
-      color: var(--text-grey);
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      transition: var(--transition);
-    }
-
-    .sidebar .categories-widget ul li a:hover {
-      color: var(--gold);
-    }
-
-    .sidebar .recent-posts-widget .post-item {
-      display: flex;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .sidebar .recent-posts-widget .post-item:last-child {
-      border-bottom: none;
-    }
-
-    .sidebar .recent-posts-widget .post-item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: var(--radius-button);
-      flex-shrink: 0;
-    }
-
-    .sidebar .recent-posts-widget .post-item h4 {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 0 0 4px;
-    }
-
-    .sidebar .recent-posts-widget .post-item h4 a {
-      color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .sidebar .recent-posts-widget .post-item h4 a:hover {
-      color: var(--gold);
-    }
-
-    .sidebar .recent-posts-widget .post-item time {
-      color: var(--text-muted);
-      font-size: 0.75rem;
-    }
-
-    .sidebar .widget-item .btn-luxury {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .sidebar .contact-widget {
-      background: var(--bg-secondary);
-      border-color: var(--border-light);
-    }
-
-    .sidebar .contact-widget h3 {
-      color: var(--white);
-    }
-
-    .sidebar .contact-widget p {
-      color: var(--text-grey);
-      font-size: 0.9rem;
-    }
-
-    /* ============================================
-    FOOTER - LUXURY
-    ============================================ */
-    .footer {
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-light);
-      padding: 60px 0 30px;
-    }
-
-    .footer .sitename {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .footer h4 {
-      font-family: var(--font-heading);
-      color: var(--white);
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .footer p,
-    .footer a {
-      color: var(--text-grey);
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .footer a:hover {
-      color: var(--gold);
-    }
-
-    .footer .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer .footer-links ul li {
-      padding: 4px 0;
-    }
-
-    .footer .footer-links ul li a {
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .footer .footer-links ul li a:hover {
-      color: var(--gold);
-      padding-left: 4px;
-    }
-
-    .footer .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      color: var(--text-grey);
-      margin-right: 8px;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer .social-links a:hover {
-      background: var(--gold);
-      color: #000000;
-      border-color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    .footer .copyright {
-      border-top: 1px solid var(--border-light);
-      padding-top: 24px;
-      margin-top: 40px;
-    }
-
-    .footer .copyright p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-
-    .footer .copyright .credits {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    .footer .copyright .credits a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    .footer .copyright .credits a:hover {
-      color: var(--gold-light);
-    }
-
-    /* ============================================
-    SCROLL TOP - LUXURY
-    ============================================ */
-    .scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: #000000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      text-decoration: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      z-index: 999;
-      box-shadow: var(--shadow-gold);
-    }
-
-    .scroll-top.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      background: var(--gold-light);
-      transform: translateY(-3px);
-      color: #000000;
-    }
-
-    /* ============================================
-    ANIMATIONS
-    ============================================ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-up-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .fade-up-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .fade-up-delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    /* ============================================
-    NAVBAR OVERRIDES - LUXURY
-    ============================================ */
-    .header {
-      background: rgba(11, 11, 11, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .header .logo img {
-      max-height: 150px;
-      transition: var(--transition);
-    }
-
-    .header .navmenu ul li a {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-grey);
-      letter-spacing: 0.5px;
-      transition: var(--transition);
-      padding: 4px 0;
-      position: relative;
-    }
-
-    .header .navmenu ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: var(--transition);
-    }
-
-    .header .navmenu ul li a:hover,
-    .header .navmenu ul li a.active {
-      color: var(--white);
-    }
-
-    .header .navmenu ul li a:hover::after,
-    .header .navmenu ul li a.active::after {
-      width: 100%;
-    }
-
-    .btn-get-quote {
-      background: var(--gold);
-      color: #000000 !important;
-      padding: 8px 24px !important;
-      border-radius: var(--radius-button);
-      font-weight: 600 !important;
-      transition: var(--transition);
-    }
-
-    .btn-get-quote:hover {
-      background: var(--gold-light) !important;
-      color: #000000 !important;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-gold);
-    }
-
-    .btn-get-quote::after {
-      display: none !important;
-    }
-
-    .mobile-nav-toggle {
-      color: var(--white);
-      font-size: 28px;
-    }
-
-    @media (max-width: 1200px) {
-      .header .navmenu ul {
-        background: var(--bg-primary);
-        border-bottom: 1px solid var(--border-light);
-        padding: 20px;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SGD Unique Blocks & Pavers",
+    "alternateName": "SGD Blocks & Pavers",
+    "url": "https://sgduniqueblocksandpavers.in/",
+    "logo": "https://sgduniqueblocksandpavers.in/assets/img/logo1.png",
+    "image": "https://sgduniqueblocksandpavers.in/assets/img/SDG-home.jpeg",
+    "description": "Premium manufacturer of interlocking paver blocks, concrete solid blocks, grass pavers and kerb stones in Mysuru, Karnataka. German engineered quality blocks for construction.",
+    "telephone": "+9185500004554",
+    "email": "sgduniqueblocksandpavers2026@gmail.com",
+    "priceRange": "₹₹",
+    "paymentAccepted": "Cash, Credit Card, UPI, Bank Transfer",
+    "currenciesAccepted": "INR",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kumar Beedu, Bogadi",
+      "addressLocality": "Mysuru",
+      "addressRegion": "Karnataka",
+      "postalCode": "570026",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "12.2958",
+      "longitude": "76.6394"
+    },
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
       }
+    ],
+    "areaServed": [
+      {"@type": "City", "name": "Mysuru"},
+      {"@type": "City", "name": "Mysore"},
+      {"@type": "City", "name": "Bengaluru"},
+      {"@type": "City", "name": "Mandya"},
+      {"@type": "City", "name": "Hassan"},
+      {"@type": "State", "name": "Karnataka"}
+    ]
+  }
+  </script>
 
-      .header .navmenu ul li a {
-        padding: 8px 0;
-      }
+  <!-- =======================================================
+  ARTICLE STRUCTURED DATA - ENHANCED
+  ======================================================== -->
 
-      .btn-get-quote {
-        display: inline-block;
-        margin-top: 8px;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Choose Paver Blocks for Driveways in Mysore - Expert Guide",
+    "description": "Expert guide on choosing the best paver blocks for driveways in Mysore. Learn about thickness (60mm vs 80mm), patterns, colours, durability & installation tips from SGD Unique Blocks & Pavers.",
+    "image": "https://sgduniqueblocksandpavers.in/assets/img/use-cases/zig-zag-use-3.jpeg",
+    "author": {
+      "@type": "Organization",
+      "name": "SGD Unique Blocks & Pavers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SGD Unique Blocks & Pavers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgduniqueblocksandpavers.in/assets/img/logo1.png"
       }
+    },
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-07-10",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://sgduniqueblocksandpavers.in/blog/how-to-choose-paver-blocks-for-driveways"
+    },
+    "keywords": "paver blocks driveway, choose paver blocks Mysore, driveway pavers, interlocking pavers guide, paver installation tips, 80mm paver blocks, zig zag pavers"
+  }
+  </script>
+
+  <!-- =======================================================
+  BREADCRUMB STRUCTURED DATA - ENHANCED
+  ======================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sgduniqueblocksandpavers.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Construction Tips & Expert Guides",
+        "item": "https://sgduniqueblocksandpavers.in/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Choose Paver Blocks for Driveways in Mysore",
+        "item": "https://sgduniqueblocksandpavers.in/blog/how-to-choose-paver-blocks-for-driveways"
+      }
+    ]
+  }
+  </script>
+
+  <!-- =======================================================
+  FAQ SCHEMA - FOR RICH SNIPPETS IN SEARCH RESULTS
+  ======================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What thickness of paver blocks is best for driveways in Mysore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For residential driveways in Mysore, 80mm paver blocks are recommended as they provide the ideal balance of durability and cost-effectiveness. They can withstand regular vehicle traffic including cars, SUVs, and light trucks. 60mm pavers are suitable only for pedestrian walkways."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which paver pattern is best for driveways in Karnataka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zig Zag and I-Paver patterns are most recommended for driveways in Karnataka. They offer excellent interlocking strength and stability, making them ideal for slopes and areas with vehicle traffic. Brick and Square pavers are also popular for their aesthetic appeal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do paver block driveways last in Mysore's climate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "High-quality paver block driveways from SGD Unique Blocks & Pavers can last 20-30 years with proper installation and maintenance. Our M30 grade concrete pavers with low water absorption (≤5%) resist Mysore's tropical climate, including heavy rainfall and intense sunlight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I buy quality paver blocks for driveways in Mysore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SGD Unique Blocks & Pavers, located at Kumar Beedu, Bogadi, Mysuru, manufactures premium interlocking paver blocks with German technology. We offer free delivery in Mysore and serve all of Karnataka including Bengaluru, Mandya, and Hassan. Call +91 85500 04554 for bulk orders."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- =======================================================
+  WEBSITE SCHEMA
+  ======================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SGD Unique Blocks & Pavers - Best Paver Blocks & Concrete Solid Blocks in Mysore",
+    "url": "https://sgduniqueblocksandpavers.in/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://sgduniqueblocksandpavers.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
-
-    /* ============================================
-    RESPONSIVE
-    ============================================ */
-    @media (max-width: 992px) {
-      .blog-author .author-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .sidebar {
-        margin-top: 32px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .page-title {
-        padding: 120px 0 60px;
-      }
-
-      .page-title h1 {
-        font-size: 28px;
-      }
-
-      .blog-details .article {
-        padding: 20px;
-      }
-
-      .blog-details .meta-top ul {
-        gap: 8px;
-      }
-
-      .blog-details .meta-top ul li {
-        font-size: 0.8rem;
-      }
-
-      .blog-details .content h2 {
-        font-size: 24px;
-      }
-
-      .blog-details .content h3 {
-        font-size: 20px;
-      }
-
-      .blog-author .author-container {
-        padding: 20px;
-      }
-
-      .sidebar .widget-item {
-        padding: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page-title h1 {
-        font-size: 24px;
-      }
-
-      .blog-details .article {
-        padding: 12px;
-      }
-
-      .blog-details .meta-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .blog-details .meta-bottom .cats,
-      .blog-details .meta-bottom .tags {
-        flex-wrap: wrap;
-      }
-
-      .related-posts .post-item img {
-        height: 160px;
-      }
-    }
-  </style>
+  }
+  </script>
 
 </head>
 
@@ -1147,7 +288,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo-1.png" style="max-height: 150px;"
+        <img src="assets/img/logo1.png" style="max-height: 150px;"
           alt="SGD Unique Blocks & Pavers - Best Paver Blocks and Concrete Solid Blocks in Mysore">
       </a>
 
@@ -1169,13 +310,15 @@
 
   <main class="main">
 
-    <!-- ============================================================ -->
-    <!-- PAGE TITLE - LUXURY -->
-    <!-- ============================================================ -->
-    <div class="page-title"><br><br><br><br>
+    <!-- Page Title - Enhanced with better SEO -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.png);">
       <div class="container position-relative">
-        <span class="label-gold">✦ Expert Guide</span>
-        <h1>How to Choose Paver Blocks for Driveways in Mysore</h1>
+        <h1 style="color: white;">How to Choose Paver Blocks for Driveways in Mysore</h1>
+        <!-- <p style="font-size: 1.1rem; opacity: 0.9; max-width: 700px;">
+          Expert guide on choosing the best <a href="product/pavers-detail.html" style="color:#f4a900;">interlocking paver blocks</a> for your driveway. 
+          Learn about thickness, patterns, colours, durability, and installation tips from Mysore's trusted 
+          <a href="about.html" style="color:#f4a900;">block manufacturer</a>.
+        </p> -->
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
@@ -1184,16 +327,14 @@
           </ol>
         </nav>
       </div>
-    </div>
+    </div><!-- End Page Title -->
 
     <div class="container">
       <div class="row">
 
         <div class="col-lg-8">
 
-          <!-- ============================================================ -->
-          <!-- BLOG DETAILS SECTION - LUXURY -->
-          <!-- ============================================================ -->
+          <!-- Blog Details Section -->
           <section id="blog-details" class="blog-details section">
             <div class="container">
 
@@ -1217,11 +358,11 @@
                     <li class="d-flex align-items-center"><i class="bi bi-folder2"></i> <a href="blog.html">Pavers
                         Guide</a></li>
                   </ul>
-                </div>
+                </div><!-- End meta top -->
 
                 <div class="content">
 
-                  <p>
+                  <p style="color: black;">
                     Choosing the right <strong>paver blocks for your driveway</strong> is one of the most important
                     decisions you'll make for your property in <strong>Mysore, Karnataka</strong>. A well-paved driveway
                     enhances curb appeal, provides long-lasting durability, and adds significant value to your home or
@@ -1229,7 +370,7 @@
                     the right <strong>interlocking paver blocks</strong> is essential for longevity and performance.
                   </p>
 
-                  <p>
+                  <p style="color: black;">
                     At <a href="index.html">SGD Unique Blocks & Pavers</a>, we manufacture premium quality <a
                       href="product/pavers-detail.html">interlocking paver blocks</a> designed for driveways, walkways,
                     and commercial spaces across Karnataka. In this comprehensive guide, we'll walk you through
@@ -1247,23 +388,23 @@
 
                   <h3>1. Consider the Thickness of Paver Blocks</h3>
 
-                  <p>
+                  <p style="color: black;">
                     The thickness of paver blocks determines their load-bearing capacity and durability. For
                     <strong>driveways in Mysore</strong>, thickness is critical because vehicles exert significant
                     weight and pressure on the surface. Here's what you need to know:
                   </p>
 
                   <ul>
-                    <li><strong>60mm Paver Blocks:</strong> Suitable for pedestrian walkways, patios, and light
+                    <li style="color: black;"><strong>60mm Paver Blocks:</strong> Suitable for pedestrian walkways, patios, and light
                       residential use. <strong>Not recommended</strong> for driveways with regular vehicle traffic.</li>
-                    <li><strong>80mm Paver Blocks:</strong> <strong>Ideal for residential driveways</strong>, parking
+                    <li style="color: black;"><strong>80mm Paver Blocks:</strong> <strong>Ideal for residential driveways</strong>, parking
                       areas, and light commercial use in Mysore. These blocks can withstand the weight of cars, SUVs,
                       and occasional light trucks.</li>
-                    <li><strong>100mm+ Paver Blocks:</strong> Recommended for commercial parking lots, industrial areas,
+                    <li style="color: black;"><strong>100mm+ Paver Blocks:</strong> Recommended for commercial parking lots, industrial areas,
                       and heavy vehicle traffic in Karnataka.</li>
                   </ul>
 
-                  <p>
+                  <p style="color: black;">
                     For most residential driveways in Mysore and across Karnataka, <strong>80mm paver blocks</strong>
                     offer the perfect balance of durability and cost-effectiveness. Our <a
                       href="product/pavers-detail.html">I-Paver and Zig Zag pavers</a> are available in both 60mm and
@@ -1272,20 +413,19 @@
 
                   <h3>2. Choose the Right Paver Pattern</h3>
 
-                  <p>
+                  <p style="color: black;">
                     The pattern of your paver blocks affects both aesthetics and structural integrity. At SGD, we offer
                     several design patterns for driveways in Mysore:
                   </p>
 
                   <ul>
-                    <li><strong>Zig Zag Paver:</strong> Classic interlocking pattern with excellent stability.
-                      <strong>Ideal for driveways with slopes or curves</strong> in Mysore.
-                    </li>
-                    <li><strong>I-Paver:</strong> Modern, sleek design with superior interlocking strength. Perfect for
+                    <li style="color: black;"><strong>Zig Zag Paver:</strong> Classic interlocking pattern with excellent stability.
+                      <strong>Ideal for driveways with slopes or curves</strong> in Mysore.</li>
+                    <li style="color: black;"><strong>I-Paver:</strong> Modern, sleek design with superior interlocking strength. Perfect for
                       contemporary homes in Karnataka.</li>
-                    <li><strong>Brick Paver:</strong> Traditional rectangular pattern that creates a timeless, elegant
+                    <li style="color: black;"><strong>Brick Paver:</strong> Traditional rectangular pattern that creates a timeless, elegant
                       look for driveways.</li>
-                    <li><strong>Square Paver:</strong> Contemporary geometric pattern suitable for modern architectural
+                    <li style="color: black;"><strong>Square Paver:</strong> Contemporary geometric pattern suitable for modern architectural
                       styles in Mysore.</li>
                   </ul>
 
@@ -1296,21 +436,21 @@
 
                   <h3>3. Select the Right Colour</h3>
 
-                  <p>
+                  <p style="color: black;">
                     Colour plays a crucial role in the overall appearance of your driveway. At SGD, we offer <strong>6
                       colour variants</strong> to match any architectural style in Mysore and Karnataka:
                   </p>
 
                   <ul>
-                    <li><strong>Natural Grey:</strong> Classic and versatile — suits all architectural styles</li>
-                    <li><strong>Charcoal:</strong> Modern, sophisticated, and stain-resistant finish for driveways</li>
-                    <li><strong>Terracotta Red:</strong> Warm, earthy tone for traditional landscapes in Mysore</li>
-                    <li><strong>Burnt Sienna:</strong> Rich, deep brown-red for elegant driveways</li>
-                    <li><strong>Saffron:</strong> Vibrant and energetic — makes any driveway stand out</li>
-                    <li><strong>Forest Green:</strong> Natural, calming tone for garden and park settings</li>
+                    <li style="color: black;"><strong>Natural Grey:</strong> Classic and versatile — suits all architectural styles</li>
+                    <li style="color: black;"><strong>Charcoal:</strong> Modern, sophisticated, and stain-resistant finish for driveways</li>
+                    <li style="color: black;"><strong>Terracotta Red:</strong> Warm, earthy tone for traditional landscapes in Mysore</li>
+                    <li style="color: black;"><strong>Burnt Sienna:</strong> Rich, deep brown-red for elegant driveways</li>
+                    <li style="color: black;"><strong>Saffron:</strong> Vibrant and energetic — makes any driveway stand out</li>
+                    <li style="color: black;"><strong>Forest Green:</strong> Natural, calming tone for garden and park settings</li>
                   </ul>
 
-                  <p>
+                  <p style="color: black;">
                     Consider the colour of your home's exterior, surrounding landscape, and personal preference when
                     selecting your paver blocks. Our <a href="services.html">colour variants</a> are UV-stable and won't
                     fade in Mysore's intense sunlight.
@@ -1321,96 +461,96 @@
 
                   <h3>4. Consider Durability and Quality</h3>
 
-                  <p>
+                  <p style="color: black;">
                     Not all paver blocks are created equal. At SGD Unique Blocks & Pavers, our <strong>interlocking
                       pavers</strong> are manufactured using <strong>high-strength M30 grade concrete</strong> with
                     compressive strength ranging from <strong>30 N/mm² to 50 N/mm²</strong>. This ensures:
                   </p>
 
                   <ul>
-                    <li>Superior load-bearing capacity for vehicle traffic on driveways</li>
-                    <li>Excellent resistance to cracking and weathering in Mysore's climate</li>
-                    <li>Low water absorption (≤ 5%) for freeze-thaw resistance</li>
-                    <li>Anti-skid surface finish for safety in wet conditions</li>
-                    <li>UV stability to prevent fading in direct sunlight</li>
+                    <li style="color: black;">Superior load-bearing capacity for vehicle traffic on driveways</li>
+                    <li style="color: black;">Excellent resistance to cracking and weathering in Mysore's climate</li>
+                    <li style="color: black;">Low water absorption (≤ 5%) for freeze-thaw resistance</li>
+                    <li style="color: black;">Anti-skid surface finish for safety in wet conditions</li>
+                    <li style="color: black;">UV stability to prevent fading in direct sunlight</li>
                   </ul>
 
-                  <p>
+                  <p style="color: black;">
                     Our <a href="projects.html">state-of-the-art German technology</a> ensures consistent quality across
                     every batch, giving you peace of mind that your driveway will last for years to come.
                   </p>
 
                   <h3>5. Evaluate the Installation Process</h3>
 
-                  <p>
+                  <p style="color: black;">
                     Proper installation is just as important as selecting the right paver blocks. Here's what you need
                     to know for your Mysore driveway project:
                   </p>
 
                   <ul>
-                    <li><strong>Base Preparation:</strong> A well-compacted base of crushed stone and sand is essential
+                    <li style="color: black;"><strong>Base Preparation:</strong> A well-compacted base of crushed stone and sand is essential
                       for stability</li>
-                    <li><strong>Edge Restraints:</strong> <a href="product/kerb-stones-detail.html">Kerb stones</a> or
+                    <li style="color: black;"><strong>Edge Restraints:</strong> <a href="product/kerb-stones-detail.html">Kerb stones</a> or
                       edge restraints prevent the pavers from shifting over time</li>
-                    <li><strong>Joint Sand:</strong> Polymeric sand between pavers locks them in place and prevents weed
+                    <li style="color: black;"><strong>Joint Sand:</strong> Polymeric sand between pavers locks them in place and prevents weed
                       growth</li>
-                    <li><strong>Compaction:</strong> Proper compaction ensures a level surface and prevents settling
+                    <li style="color: black;"><strong>Compaction:</strong> Proper compaction ensures a level surface and prevents settling
                     </li>
                   </ul>
 
-                  <p>
+                  <p style="color: black;">
                     <a href="contact.html">Contact our team</a> for expert installation advice or to request a site
                     inspection for your Mysore driveway project.
                   </p>
 
                   <h3>6. Consider the Climate in Mysore</h3>
 
-                  <p>
+                  <p style="color: black;">
                     Mysore experiences a tropical climate with distinct wet and dry seasons. Your paver blocks should be
                     able to withstand:
                   </p>
 
                   <ul>
-                    <li><strong>Heavy rainfall:</strong> Our pavers have low water absorption (≤5%) to prevent cracking
+                    <li style="color: black;"><strong>Heavy rainfall:</strong> Our pavers have low water absorption (≤5%) to prevent cracking
                     </li>
-                    <li><strong>Intense sunlight:</strong> UV-stable colours that won't fade over time</li>
-                    <li><strong>Temperature fluctuations:</strong> Frost-resistant for cooler months</li>
+                    <li style="color: black;"><strong>Intense sunlight:</strong> UV-stable colours that won't fade over time</li>
+                    <li style="color: black;"><strong>Temperature fluctuations:</strong> Frost-resistant for cooler months</li>
                   </ul>
 
-                  <p>
+                  <p style="color: black;">
                     Our <a href="product/pavers-detail.html">interlocking paver blocks</a> are engineered to perform in
                     Karnataka's diverse climate conditions.
                   </p>
 
                   <h3>7. Budget Considerations</h3>
 
-                  <p>
+                  <p style="color: black;">
                     While paver blocks are an investment, they offer excellent long-term value compared to other paving
                     options. Consider:
                   </p>
 
                   <ul>
-                    <li><strong>Initial cost:</strong> Quality pavers cost more upfront but last longer</li>
-                    <li><strong>Maintenance:</strong> Paver driveways are low-maintenance compared to concrete</li>
-                    <li><strong>Repair costs:</strong> Individual pavers can be replaced without redoing the entire
+                    <li style="color: black;"><strong>Initial cost:</strong> Quality pavers cost more upfront but last longer</li>
+                    <li style="color: black;"><strong>Maintenance:</strong> Paver driveways are low-maintenance compared to concrete</li>
+                    <li style="color: black;"><strong>Repair costs:</strong> Individual pavers can be replaced without redoing the entire
                       driveway</li>
-                    <li><strong>Property value:</strong> A well-paved driveway increases your property's value</li>
+                    <li style="color: black;"><strong>Property value:</strong> A well-paved driveway increases your property's value</li>
                   </ul>
 
-                  <p>
-                    <a href="contact.html">Request a bulk quotation</a> from SGD Unique Blocks & Pavers for competitive
+                  <p style="color: black;">
+                    <a href="contact.html" >Request a bulk quotation</a> from SGD Unique Blocks & Pavers for competitive
                     pricing on quality paver blocks for your Mysore driveway.
                   </p>
 
                   <h3>Conclusion</h3>
 
-                  <p>
+                  <p style="color: black;">
                     Choosing the right paver blocks for your driveway in Mysore doesn't have to be complicated. By
                     considering thickness, pattern, colour, durability, installation, climate, and budget, you can
                     select the perfect <strong>interlocking pavers</strong> for your project.
                   </p>
 
-                  <p>
+                  <p style="color: black;">
                     At <strong>SGD Unique Blocks & Pavers</strong>, we're committed to delivering <strong>premium
                       quality paver blocks</strong> manufactured with <strong>German engineering</strong> and
                     <strong>sustainable practices</strong> in Mysore. Our <a
@@ -1418,57 +558,48 @@
                     beauty and durability for your driveway.
                   </p>
 
-                  <p>
+                  <p style="color: black;">
                     <strong>Ready to start your driveway project in Mysore?</strong> <a href="contact.html">Contact us
                       today</a> for product samples, site inspection, or a free quotation.
                   </p>
 
-                  <div class="bg-light-custom">
-                    <p class="mb-1"><strong style="color: var(--gold);">📍 Location:</strong> Kumar Beedu, Bogadi,
-                      Mysuru – 570 026, Karnataka</p>
-                    <p class="mb-1"><strong style="color: var(--gold);">📞 Phone:</strong> +91 85500 04554 / +91 85500
-                      06556</p>
-                    <p class="mb-0"><strong style="color: var(--gold);">✉️ Email:</strong>
-                      sgduniqueblocksandpavers2026@gmail.com</p>
+                  <div class="p-3 bg-light rounded">
+                    <p class="mb-1" style="color: black;"><strong>📍 Location:</strong> Kumar Beedu, Bogadi, Mysuru – 570 026, Karnataka</p>
+                    <p class="mb-1" style="color: black;"><strong>📞 Phone:</strong> +91 85500 04554 / +91 85500 06556</p>
+                    <p class="mb-0" style="color: black;"><strong>✉️ Email:</strong> sgduniqueblocksandpavers2026@gmail.com</p>
                   </div>
 
-                </div>
+                </div><!-- End post content -->
 
                 <div class="meta-bottom">
-                  <div class="cats">
-                    <i class="bi bi-folder"></i>
-                    <ul>
-                      <li><a href="blog.html">Pavers Guide</a></li>
-                      <li><a href="blog.html">Driveway Tips</a></li>
-                    </ul>
-                  </div>
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="blog.html">Pavers Guide</a></li>
+                    <li><a href="blog.html">Driveway Tips</a></li>
+                  </ul>
 
-                  <div class="tags">
-                    <i class="bi bi-tags"></i>
-                    <ul>
-                      <li><a href="blog.html">Paver Blocks</a></li>
-                      <li><a href="blog.html">Driveway</a></li>
-                      <li><a href="blog.html">Installation</a></li>
-                      <li><a href="blog.html">Mysore</a></li>
-                      <li><a href="blog.html">Interlocking Pavers</a></li>
-                    </ul>
-                  </div>
-                </div>
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="blog.html">Paver Blocks</a></li>
+                    <li><a href="blog.html">Driveway</a></li>
+                    <li><a href="blog.html">Installation</a></li>
+                    <li><a href="blog.html">Mysore</a></li>
+                    <li><a href="blog.html">Interlocking Pavers</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
 
               </article>
 
             </div>
-          </section>
+          </section><!-- /Blog Details Section -->
 
-          <!-- ============================================================ -->
-          <!-- BLOG AUTHOR SECTION - LUXURY -->
-          <!-- ============================================================ -->
+          <!-- Blog Author Section -->
           <section id="blog-author" class="blog-author section">
 
             <div class="container">
-              <div class="author-container">
-                <img src="assets/img/logo-1.png" class="rounded-circle flex-shrink-0"
-                  style="width: 80px; height: 80px; object-fit: contain; background: var(--bg-primary); padding: 10px;"
+              <div class="author-container d-flex align-items-center">
+                <img src="assets/img/logo1.png" class="rounded-circle flex-shrink-0"
+                  style="width: 80px; height: 80px; object-fit: contain; background: #f8fafc; padding: 10px;"
                   alt="SGD Unique Blocks & Pavers - Best Paver Blocks Manufacturer in Mysore">
                 <div>
                   <h4>SGD Unique Blocks & Pavers</h4>
@@ -1479,26 +610,23 @@
                     <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                   </div>
                   <p>
-                    SGD Unique Blocks & Pavers is a leading manufacturer of premium <strong
-                      style="color: var(--white);">concrete solid blocks,
+                    SGD Unique Blocks & Pavers is a leading manufacturer of premium <strong>concrete solid blocks,
                       interlocking pavers, grass pavers and kerb stones</strong> in Mysuru, Karnataka. We combine German
                     engineering with sustainable innovation to deliver unmatched quality and durability for construction
                     projects across Karnataka.
                   </p>
-                  <a href="about.html" class="btn-luxury btn-luxury-outline-warning btn-luxury-sm">Learn More About Us
-                    →</a>
+                  <a href="about.html" class="btn btn-sm btn-outline-warning mt-2"
+                    style="border-color:#f4a900; color:#f4a900; font-weight:600;">Learn More About Us →</a>
                 </div>
               </div>
             </div>
 
-          </section>
+          </section><!-- /Blog Author Section -->
 
-          <!-- ============================================================ -->
-          <!-- RELATED POSTS SECTION - LUXURY -->
-          <!-- ============================================================ -->
+          <!-- Related Posts Section -->
           <section id="related-posts" class="related-posts section">
             <div class="container">
-              <h4>Related Articles on Paver Blocks & Construction</h4>
+              <h4 class="mb-4">Related Articles on Paver Blocks & Construction</h4>
               <div class="row gy-4">
 
                 <div class="col-md-4">
@@ -1508,7 +636,7 @@
                         alt="60mm vs 80mm paver blocks comparison for driveways in Mysore" class="img-fluid">
                     </a>
                     <h4><a href="blog-details.html">60mm vs 80mm Paver Blocks: What Is the Difference?</a></h4>
-                    <time datetime="2026-07-08">July 8, 2026</time>
+                    <time datetime="2026-07-08" style="color: black;">July 8, 2026</time>
                   </div>
                 </div>
 
@@ -1519,7 +647,7 @@
                         class="img-fluid">
                     </a>
                     <h4><a href="blog-details.html">Grass Pavers for Sustainable Landscaping</a></h4>
-                    <time datetime="2026-07-08">July 8, 2026</time>
+                    <time datetime="2026-07-08" style="color: black;">July 8, 2026</time>
                   </div>
                 </div>
 
@@ -1530,19 +658,16 @@
                         class="img-fluid">
                     </a>
                     <h4><a href="blog-details.html">Best Paver Blocks for Parking Areas</a></h4>
-                    <time datetime="2026-07-08">July 8, 2026</time>
+                    <time datetime="2026-07-08" style="color: black; ">July 8, 2026</time>
                   </div>
                 </div>
 
               </div>
             </div>
-          </section>
+          </section><!-- /Related Posts Section -->
 
         </div>
 
-        <!-- ============================================================ -->
-        <!-- SIDEBAR - LUXURY -->
-        <!-- ============================================================ -->
         <div class="col-lg-4 sidebar">
 
           <div class="widgets-container">
@@ -1556,7 +681,7 @@
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
               </form>
 
-            </div>
+            </div><!--/Search Widget -->
 
             <!-- Categories Widget -->
             <div class="categories-widget widget-item">
@@ -1571,7 +696,7 @@
                 <li><a href="blog.html">Comparison <span>(1)</span></a></li>
               </ul>
 
-            </div>
+            </div><!--/Categories Widget -->
 
             <!-- Recent Posts Widget -->
             <div class="recent-posts-widget widget-item">
@@ -1623,7 +748,7 @@
                 </div>
               </div>
 
-            </div>
+            </div><!--/Recent Posts Widget -->
 
             <!-- Product Links Widget -->
             <div class="categories-widget widget-item">
@@ -1636,21 +761,22 @@
                 <li><a href="product/kerb-stones-detail.html">Kerb Stones</a></li>
               </ul>
               <div class="mt-3">
-                <a href="services.html" class="btn-luxury btn-luxury-primary btn-luxury-sm">View All Products</a>
+                <a href="services.html" class="btn btn-warning w-100" style="color:#fff; font-weight:600;">View All
+                  Products</a>
               </div>
 
-            </div>
+            </div><!--/Product Links Widget -->
 
             <!-- Contact Widget -->
-            <div class="widget-item contact-widget">
+            <div class="widget-item p-4 bg-light rounded">
               <h3 class="widget-title">Need Expert Advice?</h3>
-              <p>Get personalized guidance on choosing the right paver blocks for your driveway project in
+              <p class="small">Get personalized guidance on choosing the right paver blocks for your driveway project in
                 Mysore.</p>
-              <a href="contact.html" class="btn-luxury btn-luxury-primary btn-luxury-sm">
+              <a href="contact.html" class="btn btn-primary w-100"
+                style="background:#f4a900; border-color:#f4a900; font-weight:600;">
                 <i class="bi bi-whatsapp me-2"></i> Contact Our Experts
               </a>
-              <p class="mt-2 small text-center" style="color: var(--text-muted);">Call: <strong
-                  style="color: var(--gold);">+91 85500 04554</strong></p>
+              <p class="mt-2 small text-center">Call: <strong>+91 85500 04554</strong></p>
             </div>
 
           </div>
@@ -1662,10 +788,8 @@
 
   </main>
 
-  <!-- ============================================================ -->
-  <!-- FOOTER - LUXURY -->
-  <!-- ============================================================ -->
-  <footer id="footer" class="footer dark-background">
+  <!-- ===== FOOTER - UPDATED ===== -->
+ <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -1772,54 +896,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- ============================================================ -->
-  <!-- LUXURY INDUSTRIAL - ENHANCED SCRIPTS -->
-  <!-- ============================================================ -->
-  <script>
-    // === Fade-up on scroll (Intersection Observer) ===
-    document.addEventListener('DOMContentLoaded', function () {
-      const fadeElements = document.querySelectorAll('.fade-up');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      fadeElements.forEach(el => observer.observe(el));
-
-      // === Scroll Top Button ===
-      const scrollTop = document.getElementById('scroll-top');
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          scrollTop.classList.add('active');
-        } else {
-          scrollTop.classList.remove('active');
-        }
-      });
-
-      scrollTop.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      // === Navbar shrink on scroll ===
-      const header = document.getElementById('header');
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 80) {
-          header.style.background = 'rgba(11, 11, 11, 0.96)';
-        } else {
-          header.style.background = 'rgba(11, 11, 11, 0.92)';
-        }
-      });
-    });
-  </script>
 
 </body>
 

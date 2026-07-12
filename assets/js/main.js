@@ -12,24 +12,16 @@
   // ============================================
   // CACHE BUSTING - Version check
   // ============================================
-  // This function checks if the page was loaded with a version parameter
-  // If not, it reloads with the current version from the global VERSION variable
   function ensureCacheBusting() {
-    // Check if VERSION is defined (from index.html)
     if (typeof VERSION !== 'undefined') {
-      // Check if current URL already has a version parameter
       if (!window.location.search.includes('v=')) {
-        // Only reload if we're not already on a versioned URL
-        // and we're not in an iframe or similar
         if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-          // For production, ensure all resources are versioned
-          // But don't force a page reload - the resources already have version via the script
+          // Production environment - resources already versioned
         }
       }
     }
   }
 
-  // Run cache busting check
   ensureCacheBusting();
 
   /**
@@ -38,7 +30,10 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    if (!selectHeader) return;
+    if (!selectHeader.classList.contains('scroll-up-sticky') && 
+        !selectHeader.classList.contains('sticky-top') && 
+        !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
@@ -51,11 +46,14 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    const body = document.querySelector('body');
+    body.classList.toggle('mobile-nav-active');
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
   }
-  
+
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
@@ -78,7 +76,10 @@
     navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      const dropdown = this.parentNode.nextElementSibling;
+      if (dropdown) {
+        dropdown.classList.toggle('dropdown-active');
+      }
       e.stopImmediatePropagation();
     });
   });
@@ -103,7 +104,7 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  
+
   if (scrollTop) {
     scrollTop.addEventListener('click', (e) => {
       e.preventDefault();
@@ -150,7 +151,7 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    
+
     if (typeof imagesLoaded !== 'undefined' && typeof Isotope !== 'undefined') {
       imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
         initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
@@ -208,7 +209,9 @@
   // LUXURY INDUSTRIAL - ENHANCED SCRIPTS
   // ============================================
   document.addEventListener('DOMContentLoaded', function () {
-    // Fade-up on scroll (Intersection Observer)
+    /**
+     * Fade-up on scroll using Intersection Observer
+     */
     const fadeElements = document.querySelectorAll('.fade-up');
 
     if (fadeElements.length > 0) {
@@ -226,22 +229,32 @@
       fadeElements.forEach(el => observer.observe(el));
     }
 
-    // Navbar shrink on scroll
-    const header = document.getElementById('header');
-    if (header) {
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > 80) {
-          header.style.background = 'rgba(11, 11, 11, 0.96)';
-          header.style.backdropFilter = 'blur(12px)';
-        } else {
-          header.style.background = 'rgba(11, 11, 11, 0.92)';
-          header.style.backdropFilter = 'blur(12px)';
+    /**
+     * Smooth navigation for anchor links
+     */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       });
-    }
+    });
 
-    // Version all images with data-version attribute (fallback for any missed images)
+    /**
+     * Version all images with data-version attribute
+     */
     if (typeof VERSION !== 'undefined') {
       document.querySelectorAll('img[data-version="true"]').forEach(el => {
         if (el.src && !el.src.includes('v=')) {
@@ -250,6 +263,47 @@
         }
       });
     }
+
+    /**
+     * Service card hover effects with dynamic styling
+     */
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    /**
+     * Enhanced form validation for contact forms
+     */
+    document.querySelectorAll('.php-email-form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const requiredFields = this.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('is-invalid');
+          } else {
+            field.classList.remove('is-invalid');
+          }
+        });
+        
+        if (!isValid) {
+          e.preventDefault();
+          const errorMsg = this.querySelector('.error-message');
+          if (errorMsg) {
+            errorMsg.style.display = 'block';
+            errorMsg.textContent = 'Please fill in all required fields.';
+          }
+        }
+      });
+    });
   });
 
 })();
