@@ -289,7 +289,8 @@
                 pavers and kerb stones</strong>
               with <strong>German technology, strength, durability, and trust</strong>.
             </p>
-            <p style="color: black;"><strong>Building the foundation of a stronger & greener tomorrow in Karnataka.</strong></p>
+            <p style="color: black;"><strong>Building the foundation of a stronger & greener tomorrow in
+                Karnataka.</strong></p>
           </div>
         </div>
 
@@ -301,7 +302,7 @@
               <i class="bi bi-geo-alt"></i>
               <h3>Visit Our Factory in Mysore</h3>
               <p style="color: black;">Kumar Beedu, Bogadi</p>
-              <p style="color: black;" >Mysuru – 570 026, Karnataka</p>
+              <p style="color: black;">Mysuru – 570 026, Karnataka</p>
               <p class="small text-muted"><strong>State-of-the-Art German Technology</strong></p>
               <p class="small text-muted">Serving Mysore, Bengaluru, Mandya, Hassan & all Karnataka</p>
               <a href="#map" class="btn btn-sm btn-outline-warning mt-2"
@@ -385,7 +386,7 @@
                   concrete blocks or pavers in Mysore? Fill the form and our team will get back to you within 24 hours.
                 </p>
 
-                <form action="forms/contact.php" method="post" class="php-email-form">
+                <form id="contactForm" class="whatsapp-form">
                   <div class="row gy-4">
 
                     <div class="col-md-6">
@@ -541,7 +542,7 @@
         <div class="modal-body">
           <p class="text-muted small">We're Ready To Serve You! Fill the form and our team will respond within 24 hours.
           </p>
-          <form action="forms/contact.php" method="post" class="php-email-form">
+          <form id="quickQuoteForm" class="whatsapp-form">
             <div class="mb-3">
               <input type="text" class="form-control" name="name" placeholder="Full Name" required>
             </div>
@@ -683,6 +684,51 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+<script>
+(function(){
+const WHATSAPP="918550004554";
+
+function attach(id){
+ const form=document.getElementById(id);
+ if(!form) return;
+ form.addEventListener("submit",function(e){
+   e.preventDefault();
+   const btn=form.querySelector('button[type="submit"]');
+   const old=btn.innerHTML;
+   btn.disabled=true;
+   btn.innerHTML='Opening WhatsApp...';
+
+   const get=n=>{
+      const el=form.querySelector(`[name="${n}"]`);
+      return el?el.value.trim():"";
+   };
+
+   const phone=get("phone");
+   if(phone && !/^\d{10}$/.test(phone.replace(/\D/g,''))){
+      alert("Please enter a valid 10-digit phone number.");
+      btn.disabled=false; btn.innerHTML=old; return;
+   }
+
+   const msg=`🏗️ *New Website Enquiry*%0A%0A`
+   +`👤 Name: ${get("name")}%0A`
+   +`📞 Phone: ${phone}%0A`
+   +`📧 Email: ${get("email")}%0A`
+   +`📍 City: ${get("city")}%0A`
+   +`🧱 Product: ${get("product_interest")}%0A%0A`
+   +`📝 Requirement:%0A${get("message")}`;
+
+   window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,"_blank");
+   form.reset();
+   btn.disabled=false;
+   btn.innerHTML=old;
+ });
+}
+attach("contactForm");
+attach("quickQuoteForm");
+})();
+</script>
 
 </body>
 
